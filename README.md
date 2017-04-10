@@ -1,4 +1,5 @@
 Required apps
+
 -apache2
 -mysql-client
 -mysql-server
