@@ -1,9 +1,9 @@
 node {
-    stage('Build') {
-        echo 'Building....'
+    stage('Checkout') {
+        git url: 'https://github.com/Rydor/HA'
     }
     stage('Test') {
-        echo 'Building....'
+        sh ./test_disruptor.py
     }
     stage('Deploy') {
         echo 'Deploying....'
