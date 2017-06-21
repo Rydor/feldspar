@@ -2,6 +2,11 @@ node {
     stage('Checkout') {
         git url: 'https://github.com/Rydor/HA.git'
     }
+    stage('Setup') {
+        sh 'virtualenv /opt/jenkins'
+        sh '. /opt/jenkins/bin/activate'
+        sh 'pip install -r requirements.txt'
+    }
     stage('Test') {
         sh 'python ./test_disruptor.py'
     }
