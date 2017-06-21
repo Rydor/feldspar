@@ -4,7 +4,7 @@ node {
     }
     stage('Setup') {
         sh '. /opt/jenkins/bin/activate'
-        sh 'pip install -r requirements.txt'
+        sh 'pip install --trusted-host pypi.python.org -r requirements.txt'
     }
     stage('Test') {
         sh 'python ./test_disruptor.py'
