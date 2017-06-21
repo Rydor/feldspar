@@ -1,12 +1,6 @@
-#!/usr/bin/env groovy
 node {
-    stage('Build') {
-        echo 'Building....'
-    }
-    stage('Test') {
-        echo 'Building....'
-    }
-    stage('Deploy') {
-        echo 'Deploying....'
-    }
+   stage 'Stage 1'
+   		echo 'Hello World 1'
+   stage 'Stage 2'
+   		echo 'Hello World 2'
 }
