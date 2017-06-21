@@ -1,5 +1,2 @@
 #!/usr/bin/env groovy
-
-node {
-    echo "This is a github Hello World!!"
-}
+step([$class: 'GitHubSetCommitStatusBuilder'])
