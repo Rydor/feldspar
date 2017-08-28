@@ -1,0 +1,24 @@
+#!groovy
+
+stage('Build'){
+    node{
+        println('We are building...')
+    }
+}
+
+stage('Test'){
+    node{
+        println('We are testing...')
+        sh 'echo ryan rox'
+    }
+}
+
+stage('Deploy'){
+    timeout(time: 1, unit: 'MINUTES'){
+        input message: 'Are you sure you want to deploy?', submitter: 'alek3167-edit'
+    }
+    node{
+        println('We are deploying...')
+        build job: 'old-project'
+    }
+}
